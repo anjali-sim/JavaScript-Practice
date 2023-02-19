@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fruits=["Pineapple","Strawberry","Orange","Apple"];
+        console.log(fruits.at(2)); 
+        //Orange
+
+        fruits1=["Banana","Cherry","Peach"];
+        const add = fruits.concat(fruits1);
+        console.log(add); 
+        //(7) ['Pineapple', 'Strawberry', 'Orange', 'Apple', 'Banana', 'Cherry', 'Peach']
+        
+        // copyWithin(position at which copy is to be placed, start, end)
+        console.log(fruits.copyWithin(1,0));
+        //(4) ['Pineapple', 'Pineapple', 'Strawberry', 'Orange']
+
+        const iter = fruits.entries();
+        console.log(iter.next().value);
+        console.log(iter.next().value);
+        console.log(iter.next().value);
+        console.log(iter.next().value);
+        console.log(iter.next().value);
+        // (2) [0, 'Pineapple']
+        // (2) [1, 'Orange']
+        // (2) [2, 'Apple']
+        // (2) [3, 'Apple']
+        // undefined
+
+
+        const isBelow = (currentValue) => currentValue < 40;
+        const array1 = [1, 30, 39, 29, 10, 13];
+        console.log(array1.every(isBelow)); //takes a function only
+        //true
+        //If any value in the array is greater than 40, then we will get false
+
+        const arr=[4,5,6,7,8];
+        console.log(arr.fill(1,2,4)); //Fill with 1 from position 2 to 4(i.e. position 2 & 3)
+        // (5) [4, 5, 1, 1, 8]
+        console.log(arr.fill(5,1));
+        // (5) [4, 5, 5, 5, 5]
+        console.log(arr.fill(9));
+        // (5) [9, 9, 9, 9, 9]
+
+        const arr1=[1,2,4,7,8];
+        const find=arr1.find(element => element < 5);
+        console.log(find);//takes a function only
+        // 1 (Gives only one output that first satisfies the condition)
+        //If no values satisfy the function, undefined is returned.
+        const arr3=[11,22,33,44,55];
+        const last=arr3.findLast(element => element < 40);
+        console.log(last);
+        // 33 (Gives the element that satisfies the function from reverse order)
+        //If no values satisfy the function, undefined is returned.
+
+        const arr2=[9,8,7,6,5];
+        const result = arr2.findIndex(element => element < 7);
+        console.log(result);
+        // 3 (Gives the first position(index) which satifies the condition)
+        //If no elements satisfy the function, it will return -1
+        const arr4=[99,88,77,66];
+        const result1=arr4.findLastIndex(element => element < 50);
+        console.log(result1);
+        //-1 (as no element in array is less than 50)
+        //If no elements satisfy the function, it will return -1
+
+        const arr5=[1,2,3,[4,5]];
+        console.log(arr5.flat());
+        //[1,2,3,4,5]
+        const arr6=[9,8,5,[[[[5,7,2]]]]];
+        console.log(arr6.flat(2));
+        //[9,8,5,Array [Array 5,7,2]]]
+
+        const arr7=[1,5,[5,6],[],[[5,8]],7];
+        const flattmap=arr7.flatMap(num => num);
+        console.log(flattmap);
+        //Array [1, 5, 5, 6, Array [5, 8], 7]
+        
+        const arr8=["x","y","z"];
+        arr8.forEach(element => console.log(element));
+        // x
+        // y
+        // z
+        // executes a provided function once for each array element.
+
+        console.log(Array.from("React")); // (5) ['R', 'e', 'a', 'c', 't']
+        // creates a new, shallow-copied Array instance from an iterable or array-like object.
+        
+        const arr9=["cat","dog","sheep","horse"];
+        console.log(arr9.includes("horse")); // true
+        console.log(arr9.includes("goat")); // false
+
+        console.log(arr9.indexOf("sheep")); // 2
+        console.log(arr9.indexOf("cow")); // -1
+
+        console.log(Array.isArray([1,5,3])); // true
+        console.log(Array.isArray({})); //false
+        // it determines whether the passed value is an Array
+
+        console.log(arr9.join("*")); //cat*dog*sheep*horse
+
+        const arr10=["p","q","r"];
+        const itr = arr10.keys();
+        for(const key of itr){
+            console.log(key);
+        }
+
+        const arr11=["a","b","a","z"];
+        console.log(arr11.lastIndexOf("a")); // 2
+
+        console.log(Array.of('name',20,false,'age'));
+        // Array ["foo", 2, "bar", true]
+        //creates a new Array instance from the arguments
+
+        const arr12=[1,2,3,4];
+        const init=0;
+        const sum=arr12.reduce((acc, cval) => acc+cval+init);
+        console.log(sum); // 10
+
+        const arr13 = [1, 2, 3, 4, 5];
+        const even = (element) => element % 2 === 0;
+        console.log(arr13.some(even)); // true
+
+        const arr14 = [1, 2, 'a', '1a'];
+        console.log(arr14.toString()); // "1,2,a,1a"
+
+        const arr15 = ['a', 'b', 'c'];
+        const iterator = array1.values();
+        for (const value of iterator) {
+            console.log(value);
+        }
+        //"a"
+        //"b"
+        //"c"
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var line1 = ['Artificial', 'amateurs', 'arent at', 'all amazing'];
+        var line2 = ['Analytically', 'I assault', 'animate', 'things'];
+        console.log(line1);
+        // Gives output as array elements
+
+        console.log(...line1);
+        // Gives output as a single line
+
+        var fullsong = [...line1, ...line2, 'Broken', 'barriers', 'bounded'];
+        console.log(...fullsong);
+        // Gives all the lines as output
+
+        song = function(name, artist){
+            console.log('Song name is'+name+'. Artist name is'+artist);
+        }
+        let details = ['abc', 'def'];
+        song(...details);
+
+        let numbers = [9,6,4,2,8];
+        console.log(Math.min(...numbers));
+        // Gives the minimum number
+
+    </script>
+</body>
+</html>

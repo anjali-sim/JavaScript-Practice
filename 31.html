@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Example</title>
+</head>
+<body>
+    <script src="text/javascript">
+    let companies =
+    [
+    {
+        "name" : "Big Corporation",
+        "numberOfEmployees" : 1000,
+        "ceo" : "Mary",
+        "rating" : 3.6
+    },
+    {
+        "name" : "Small StartUp",
+        "numberOfEmployees" : 5,
+        "ceo" : null,
+        "rating" : 4.2
+    }
+]
+console.log(companies) //whole data is printed
+
+let companies1 = //mostly when dealing with JSON we pass it as a string and not as object
+    `[
+    {
+        "name" : "Big Corporation",
+        "numberOfEmployees" : 1000,
+        "ceo" : "Mary",
+        "rating" : 3.6
+    },
+    {
+        "name" : "Small StartUp",
+        "numberOfEmployees" : 5,
+        "ceo" : null,
+        "rating" : 4.2
+    }
+]`
+console.log(JSON.parse(companies)) //returns 
+console.log(JSON.parse(companies)[1].name) //Small StartUp
+
+</script>
+</body>
+</html>

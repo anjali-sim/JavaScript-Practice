@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE Example</title>
+</head>
+<body>
+    <script>
+        //Avoid global variable pollution
+        //initialization starts
+        var counter = 10;
+        counter++; //here counter is 11
+        //ends
+
+        function someFun() {
+            counter = counter + 1; //here counter is 12 as counter is a global variable
+        } //But we want that that global counter variable must not affect the value of the function
+        //we want both the variables to be different
+        someFun();
+
+        (function someFun() { //Anonymous Function
+            var counter = 10;
+            counter++;
+        })();
+
+    </script>
+</body>
+</html>
